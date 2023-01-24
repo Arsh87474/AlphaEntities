@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1 id="time">Current time (loading...)</h1>
+        <script>
+          var time = document.querySelector("#time");
+          function padZero(number){
+            var stringifiedNumber = number + "";
+            if(stringifiedNumber.length == 1){
+              return "0"+stringifiedNumber;
+            }else{
+              return stringifiedNumber;
+            }
+          }
+          
+          window.setInterval(function(){
+            var today = new Date();
+            time.innerText = padZero(today.getHours()) + ":" + padZero(today.getMinutes()) + ":" + padZero(today.getSeconds());
+          }, 10);
+        </script>
+        <font face = "Consolas" size = "10">Ready For Productive Haven </font><br />
+    </body>
+</html>
