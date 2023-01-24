@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "StudyHolic",
+    "description": "Your digital study buddy!",
+    "version": "0.1",
+
+    "icons": {
+        "128": "study.png"
+    },
+    "action": {
+        "default_icon": {
+          "128": "study.png"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": ["content.js"]
+        }
+    ],
+
+    "chrome_url_overrides" : {
+        "newtab": "home.html"
+    },
+
+    "permissions": ["activeTab", "scripting"]
+}
